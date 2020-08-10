@@ -4,7 +4,7 @@ Complete guide how to build ota firmware to be used with yaota8266 script.
 
 ## Getting Started
 
-Clone this repository
+Clone this repository:
 
 ```
 git clone https://github.com/nenadfilipovic/esp8266-micropython-ota
@@ -30,7 +30,7 @@ Download axtls repository and extract to esp8266ota/yaota8266/ota_server/lib/axt
 https://github.com/pfalcon/axtls/tree/3c6b62b718427c03c345ee15be9bb66959a34ccd
 ```
 
-Generate your keys in ota_client folder
+Generate your keys in ota_client folder:
 
 ```
 .gen_keys.sh
@@ -45,7 +45,7 @@ You need to keep priv.key and pub.key in same location as your ota_client.py or 
 
 Copy mod value to modulus field in config.h.example and rename file to config.h.
 
-Prepare new sdk and check for updates, change folder to esp-open-sdk and run
+Prepare new sdk and check for updates, change folder to esp-open-sdk and run:
 
 ```
 make clean
@@ -67,7 +67,7 @@ Copy `etshal.h and boot8266.ld` from patch folder to your boot8266 folder and re
 
 Copy `ota.ld` from patch folder to your ota_server folder and replace old file.
 
-From root of yaota8266 folder run
+From root of yaota8266 folder run:
 
 ```
 make
@@ -75,7 +75,7 @@ make
 
 In root folder yaota8266.bin will be created, save it somewhere.
 
-Go to micropython/port/esp8266 folder and run
+Go to micropython/port/esp8266 folder and run:
 
 ```
 make ota
@@ -83,7 +83,7 @@ make ota
 
 In build folder firmware-ota.bin will be created, put it next to yaota8266.bin.
 
-Using esptool flash ota server and ota firmware with these commands
+Using esptool flash ota server and ota firmware with these commands:
 
 ```
 esptool.py --port your-port --baud 230400 write_flash -fm dio --flash_size=detect 0x0 yaota8266.bin
@@ -96,13 +96,13 @@ esptool.py --port your-port --baud 230400 write_flash -fm dio --flash_size=detec
 To flash firmware by ota, restart esp8266 board and in next 3 seconds press flash button to enter ota mode.
 Connect board to internet and get its ip address.
 
-On PC run
+On PC run:
 
 ```
 ota_client.py -a [address] live-ota [firmware.name]
 ```
 
-Example
+Example:
 
 ```
 python ota_client.py -a 196.182.12.10 live-ota myfirmware.bin
@@ -137,7 +137,7 @@ I have included yaota8266.bin and firmware-ota.bin and keys that work with those
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
