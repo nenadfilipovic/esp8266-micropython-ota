@@ -34,9 +34,6 @@ Generate your keys in ota_client folder:
 
 ```
 .gen_keys.sh
-```
-
-```
 python -c "import rsa_sign; rsa_sign.dump_c(rsa_sign.load_key())"
 ```
 
@@ -49,17 +46,8 @@ Prepare new sdk and check for updates, change folder to esp-open-sdk and run:
 
 ```
 make clean
-```
-
-```
 git pull
-```
-
-```
 git submodule sync
-```
-
-```
 git submodule update
 ```
 
@@ -87,9 +75,6 @@ Using esptool flash ota server and ota firmware with these commands:
 
 ```
 esptool.py --port your-port --baud 230400 write_flash -fm dio --flash_size=detect 0x0 yaota8266.bin
-```
-
-```
 esptool.py --port your-port --baud 230400 write_flash -fm dio --flash_size=detect 0x3c000 firmware-ota.bin
 ```
 
